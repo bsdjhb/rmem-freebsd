@@ -28,7 +28,7 @@ main()
 	int tid1, tid2;
 
 	mtx_init(&m, "test", NULL, MTX_SPIN);
-	x = 4;
+	atomic_store_rel_int(&x, 4);
 	tid1 = thread_start(thread1);
 	tid2 = thread_start(thread2);
 	return 1;
