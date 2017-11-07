@@ -350,5 +350,11 @@ void	witness_thread_exit(struct thread *);
 #define	WITNESS_LINE(lock) (0)
 #endif	/* WITNESS */
 
+/*
+ * For rmem, turn spinlock_* into no-ops.
+ */
+#define	spinlock_enter()
+#define	spinlock_exit()
+
 #endif	/* _KERNEL */
 #endif	/* _SYS_LOCK_H_ */
